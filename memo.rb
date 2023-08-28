@@ -24,13 +24,13 @@ elsif memo_type == 2
    puts "既存のメモを編集します。拡張子を除いた既存ファイル名を入力してください。"
     name= gets.chomp
     require 'csv'
-    memo_list=CSV.read("path/to/#{name}.csv") 
+    memo_list=CSV.read("#{name}.csv") 
     p memo_list
    puts"編集したい内容を入力してください"
-   puts "終了後、Ctrl + D　を推します。"
+   puts "終了後、Ctrl + D　を押します。"
     input_memo = STDIN.read
     memo = input_memo.chomp
     CSV.open("#{name}.csv","a") do |csv|
-    csv.puts["#{memo}"]
+    csv.puts ["#{memo}"]
 end
 end
